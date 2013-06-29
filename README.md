@@ -22,7 +22,7 @@ In your controller actions, you could return a QR code that links to the current
 ```ruby
 respond_to do |format|
   format.html
-  format.svg  { render :qrcode => request.url, :level => :l, :unit => 10 }
+  format.svg  { render :qrcode => request.url, :level => :l, :unit => 10, :text => "some text" }
   format.png  { render :qrcode => request.url }
   format.gif  { render :qrcode => request.url }
   format.jpeg { render :qrcode => request.url }
@@ -41,7 +41,8 @@ end
 * `:unit`   – How many pixels per module (e.g. 11)
 * `:fill`   – Background color (e.g "ffffff" or :white)
 * `:color`  – Foreground color for the code (e.g. "000000" or :black)
-  
+* `:text`   – Label below the QR (e.g. "label" default: "")
+
 ## About
 
 This project was inspired by the first chapter in José Valim's book [Crafting Rails Applications](http://pragprog.com/titles/jvrails/crafting-rails-applications)
